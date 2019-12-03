@@ -1,7 +1,7 @@
 const fs = require("fs");
 const readline = require("readline");
 
-console.log("Advent of Code Day 1");
+console.log("Advent of Code Day 1 Part 1");
 
 const readInterface = readline.createInterface({
   input: fs.createReadStream(
