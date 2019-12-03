@@ -8,7 +8,9 @@ https://adventofcode.com
 
 https://adventofcode.com/2019/day/1
 
-### Problem Details
+### Part 1
+
+#### Problem Details
 
 - **INPUT**: Read Input File with mass of each module
   - https://stackabuse.com/reading-a-file-line-by-line-in-node-js/
@@ -50,4 +52,34 @@ fuelOfModule = floor(1969 / 3) - 2
 fuelOfModule = floor(656.333) - 2
 fuelOfModule = 656 - 2
 fuelOfModule = 654
+```
+
+### Part 2
+
+Pseudocode
+
+```
+# read input file
+file = fopen(inputFile)
+
+totalFuelRequired = 0
+
+for (line in file as moduleMass) {
+    totalFuelRequired += calcFuelByMass(moduleMass)
+}
+
+func calcFuelByMass(mass) {
+    fuel = floor(mass / 3) - 2
+    if fuel > 0 {
+        fuel += calcFuelByMass(fuel)
+    }
+
+    if fuel > 0 {
+        return fuel
+    } else {
+        return 0
+    }
+}
+
+fuelCounterUpperTotal = sum(fuelOfModuleN1, fuelOfModuleN2, ...)
 ```
